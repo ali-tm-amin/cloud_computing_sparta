@@ -17,3 +17,5 @@ install dependencies
 ### UsingSynce:
 rsync -avzh -e "ssh -i eng99.pem" /Vagrant/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west  
 -1.compute.amazonaws.com:/home/ubuntu/app
+* scp -i pem_file file_to_copy user@ip:/destination
+example: scp -i "~/.ssh/eng99.pem" restaurant.py ubuntu@e***.com:/home/ubuntu/new_folder/restaurant.py
