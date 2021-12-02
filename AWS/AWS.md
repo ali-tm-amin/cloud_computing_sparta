@@ -15,5 +15,5 @@
 install dependencies
 
 ### UsingSynce:
-rsync -avzh -e "ssh -i eng99.pem" ~/Documents/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west  
+rsync -avzh -e "ssh -i eng99.pem" /Vagrant/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west  
 -1.compute.amazonaws.com:/home/ubuntu/app
