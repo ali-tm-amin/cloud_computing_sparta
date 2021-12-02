@@ -15,6 +15,8 @@ Cloud computing is the on-demand availability of computer system resources, espe
 
 * E.g. Healthcare companies are using the cloud to develop more personalized treatments for patients. Financial services companies are using the cloud to power real time fraud detection and prevention. And video game makeers are using the cloud to deliver online games to millions of players around the world.
 
+* Sooner or later every organisaion start adapting could services.
+
 ## Types of Cloud Computing
 
 ### Infrastructure as a Service (IaaS) 
