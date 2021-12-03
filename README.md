@@ -54,7 +54,6 @@ Provides you with a complete product that is run and managed by the service prov
 Amazon Web Service is the world's most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Millions of customers - including the fastest growing startups, largest enterprises and leading government agencies are using AWS to lower costs, become more agile and innovate faster.
 
 ## Benefits of AWS
-
 Most Functionality
 Largest Community of Customers and Partners
 Most Secure
@@ -79,9 +78,9 @@ Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging ser
 The A2A pub/sub functionality provides topics for high-throughput, push-based, many-to-many messaging between distributed systems, microservices, and event-driven serverless applications. Using Amazon SNS topics, your publisher systems can fanout messages to a large number of subscriber systems, including Amazon SQS queues, AWS Lambda functions, HTTPS endpoints, and Amazon Kinesis Data Firehose, for parallel processing. The A2P functionality enables you to send messages to users at scale via SMS, mobile push, and email.
 
 ## Making EC2 app highly available:
-there are several possibilities to achieve HA with EC2:
+There are several possibilities to achieve HA with EC2:
 
-create an autoscaling group with min capacity=1 and max capacity=1. So whenever your instance fails, the autoscaling group will create a new one. The autoscaling group comes for free, so this is not a bad solution depending on your SLA.
+Create an autoscaling group with min capacity=1 and max capacity=1. So whenever your instance fails, the autoscaling group will create a new one. The autoscaling group comes for free, so this is not a bad solution depending on your SLA.
 use ec2 auto-recovery feature by creating a cloudwatch alarm that would replace your instance if failed.
 create two EC2 instances and use Route 53 DNS failover to resolve to an healthy instance
 Last but not least: the best solution is definitely to create several instances across several availability zones and to use an elastic load balancer to distribute the traffic. This way, even if an instance fails, you already have other ones available. AWS recommends this solution as they have an SLA of 99.95% for their instance in an AZ. By putting in several AZs you can have 100% availability
@@ -93,3 +92,8 @@ Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Ama
 * Auto Scaling
 * MySQL RDs
 * SNS for alerts
+
+# For AWS EC2 instructions follow this link
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html
+# For ASG setup instructions follow the link:
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html
