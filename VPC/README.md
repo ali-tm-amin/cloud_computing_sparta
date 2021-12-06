@@ -27,3 +27,26 @@ A subnetwork or subnet is a logical subdivision of an IP network. The practice o
 # What is the different between stateless and statefull (NACL vs SG)?
 * Security groups are stateful: This means any changes applied to an incoming rule will be automatically applied to the outgoing rule. e.g. If you allow an incoming port 80, the outgoing port 80 will be automatically opened.
 Network ACLs are stateless: This means any changes applied to an incoming rule will not be applied to the outgoing rule. e.g. If you allow an incoming port 80, you would also need to apply the rule for outgoing traffic.
+
+# Step 1 - Create a VPC
+# Step2 -  Internet Gateway(IG)
+* 2.1 Attach the IG with our VPC
+# Step3 - Public subnet for our app
+# Step4- Create Route Table(RT) with routes/rules
+* 4.1 Edit routes to allow IG and VPC
+* 4.2 Associate our RT to our public subnet
+# Create a security group now or create it at when we launch our app
+* port 22 from my-ip
+* port 3000
+* port 80 HTTP
+* HTTPS -SSL
+
+# Create a private subnet in the same VPV
+* Only allow app subnet to connect to DB subnet and instance
+* Connect the app to the db
+* SG for DB inbound rules:
+  * Allow app ip
+  * Allow port 22- myIp for app instance
+  * port 27017 for app ip
+  * port 27017 from subnet ipv4/cdr block 10.0.1.0/24
+  
