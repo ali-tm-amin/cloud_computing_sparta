@@ -16,11 +16,11 @@
 install dependencies
 
 ### UsingSynce:
-rsync -avzh -e "ssh -i eng99.pem" /Vagrant/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west  
--1.compute.amazonaws.com:/home/ubuntu/app
+`rsync -avzh -e "ssh -i eng99.pem" /Vagrant/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west` 
+compute.amazonaws.com:/home/ubuntu/app
 * scp -i pem_file file_to_copy user@ip:/destination
 example: `scp -i "~/.ssh/eng99.pem" restaurant.py ubuntu@e***.com:/home/ubuntu/new_folder/restaurant.py`
-# cloud_computing_sparta
+# AWS cloud_computing_sparta
 ## What is cloud computing 
 Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user. Large clouds often have functions distributed over multiple locations, each location being a data center.
 
