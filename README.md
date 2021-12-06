@@ -70,6 +70,8 @@ An AWS security group acts as a virtual firewall for your EC2 instances to contr
 An Amazon Machine Image (AMI) provides the information required to launch an instance. ... Launch permissions that control which AWS accounts can use the AMI to launch instances. A block device mapping that specifies the volumes to attach to the instance when it's launched.
 ## Cloud watch:
 Amazon CloudWatch is a monitoring and management service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources. ... You can use CloudWatch Container Insights to monitor, troubleshoot, and alert your containerized applications and microservices
+  ![](image/AWS_cloudWatch.png)
+
 ## Alarms:
 Alarms watch metrics and execute actions by publishing notifications to Amazon SNS topics or by initiating Auto Scaling actions. SNS can deliver notifications using HTTP, HTTPS, Email, or an Amazon SQS queue. Your application can receive these notifications and then act on them in any desired way.
 ## SNS
@@ -86,7 +88,7 @@ create two EC2 instances and use Route 53 DNS failover to resolve to an healthy 
 Last but not least: the best solution is definitely to create several instances across several availability zones and to use an elastic load balancer to distribute the traffic. This way, even if an instance fails, you already have other ones available. AWS recommends this solution as they have an SLA of 99.95% for their instance in an AZ. By putting in several AZs you can have 100% availability
 ## Making EC2 highly scalable with Auto Scaling:
 Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups. You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes above this size. If you specify the desired capacity, either when you create the group or at any time thereafter, Amazon EC2 Auto Scaling ensures that your group has this many instances. If you specify scaling policies, then Amazon EC2 Auto Scaling can launch or terminate instances as demand on your application increases or decreases.
-## Services required to make EC2 highly Availabe & Scalable:
+## Services required to make EC2 highly Available & Scalable:
 * At last 2 availability zone
 * Elastic Load Balancer
 * Auto Scaling
@@ -98,4 +100,3 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html
 # For ASG setup instructions follow the link:
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html
 
-* ![](image/AWS_cloudWatch.png)
