@@ -53,8 +53,10 @@ s3.Object('your-bucket', 'your-key').delete()`
 * Download a file `s3.download_file('BUCKET_NAME', 'OBJECT_NAME', 'FILE_NAME')`
 * Delete a bucket `s3.delete_object(<bucket_name>, <file_pathon_bucket>)`
  https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
-Useing credential for EC2 instance metadata https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
+Using credential for EC2 instance metadata https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
 
-![](image/Autoscaling_LoadBalancing.png)
+<img scr="image/Autoscaling_LoadBalancing.png" width="80">
+
+
 
 
