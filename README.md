@@ -97,3 +97,5 @@ Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Ama
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html
 # For ASG setup instructions follow the link:
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html
+
+* ![](image/AWS_cloudWatch.png)
