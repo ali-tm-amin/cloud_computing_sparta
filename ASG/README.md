@@ -55,3 +55,4 @@ s3.Object('your-bucket', 'your-key').delete()`
  https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
 Useing credential for EC2 instance metadata https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
 
+![](image/AWS_ASG_Diagram.jpeg)

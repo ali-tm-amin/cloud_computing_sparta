@@ -41,12 +41,28 @@ Network ACLs are stateless: This means any changes applied to an incoming rule w
 * port 80 HTTP
 * HTTPS -SSL
 
-# Create a private subnet in the same VPV
+# Create a private subnet in the same VPC
 * Only allow app subnet to connect to DB subnet and instance
 * Connect the app to the db
-* SG for DB inbound rules:
-  * Allow app ip
-  * Allow port 22- myIp for app instance
-  * port 27017 for app ip
-  * port 27017 from subnet ipv4/cdr block 10.0.1.0/24
-  
+* Create SG for DB have these inbound rules:
+  * Allow app ip. ie `10.0.1.0/24`
+  * Allow port 22 - myIp for app instance
+  * port `27017` for app ip
+  * port `27017` from subnet ipv4/cdr block `10.0.1.0/24`
+* Create NACL and allow app ip in inbound and outbound rules 
+
+* `sudo nano .bashrc`
+* `source ~/.bashrc`
+
+## Setting up nginx as reverse proxy server
+* - `sudo nano /etc/nginx/sites-available/default`
+- Within the server block you should have an existing location / block. Replace the contents of that block with the following configuration. If your application is set to listen on a different port, update the highlighted portion to the correct port number.
+ -     location / `{
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }`
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
