@@ -29,13 +29,22 @@ A subnetwork or subnet is a logical subdivision of an IP network. The practice o
 Network ACLs are stateless: This means any changes applied to an incoming rule will not be applied to the outgoing rule. e.g. If you allow an incoming port 80, you would also need to apply the rule for outgoing traffic.
 
 # Step 1 - Create a VPC
+![](/vpc.png)
 # Step2 -  Internet Gateway(IG)
+![](/ig.png)
 * 2.1 Attach the IG with our VPC
+![](/attach_ig_vpc.png)
+![](/attached_ig_vpc.png)
 # Step3 - Public subnet for our app
-# Step4- Create Route Table(RT) with routes/rules
+![](/public_subnet.png)
+# Step 4 - Create Route Table (RT) with routes/rules
+![](/rt.png)
 * 4.1 Edit routes to allow IG and VPC
+
 * 4.2 Associate our RT to our public subnet
+![](/rt_association.png)
 # Create a security group now or create it at when we launch our app
+![](/vpc_sg.png)
 * port 22 from my-ip
 * port 3000
 * port 80 HTTP
@@ -43,16 +52,20 @@ Network ACLs are stateless: This means any changes applied to an incoming rule w
 
 # Create a private subnet in the same VPC
 * Only allow app subnet to connect to DB subnet and instance
+![](/private_subnet.png)
 * Connect the app to the db
+
 * Create SG for DB have these inbound rules:
   * Allow app ip. ie `10.0.1.0/24`
   * Allow port 22 - myIp for app instance
   * port `27017` for app ip
   * port `27017` from subnet ipv4/cdr block `10.0.1.0/24`
+  ![](/sg_db_inbound_rules.png)
 * Create NACL and allow app ip in inbound and outbound rules 
+![](/NACL_inbound_rule_db.png)
+![](/nacl_outbound_rule_db.png)
 
-* `sudo nano .bashrc`
-* `source ~/.bashrc`
+
 
 ## Setting up nginx as reverse proxy server
 * - `sudo nano /etc/nginx/sites-available/default`
@@ -66,3 +79,7 @@ Network ACLs are stateless: This means any changes applied to an incoming rule w
         proxy_cache_bypass $http_upgrade;
     }`
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
+
+* `sudo nano .bashrc`
+* `source ~/.bashrc`
+
