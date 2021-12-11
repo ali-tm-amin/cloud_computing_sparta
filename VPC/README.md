@@ -94,26 +94,26 @@ Network ACLs are stateless: This means any changes applied to an incoming rule w
 2. Create a `public`, `private `and `nat` NACL and select your `VPC`
 
 3. On the public nacl add the following inbound rules:
-100>HTTP(80) > TCP(6) 80 > 0.0.0.0/0
-110>SSH(22) > TCP(6) 22 > myIp
-120>Custom TCP > TCP(6) 1024-65535 > 0.0.0.0/0
- *> All Traffic > All > All > 0.0.0.0/0
+- 100>HTTP(80) > TCP(6) 80 > 0.0.0.0/0
+- 110>SSH(22) > TCP(6) 22 > myIp
+- 120>Custom TCP > TCP(6) 1024-65535 > 0.0.0.0/0
+ 
 4. On the public nacl add the following outbound rules:
-100> HTTP(80) > TCP(6) 80 > 0.0.0.0/0
-110> Custom TCP > TCP(6) 27017 > 10.0.1.0/24
-120>Custom TCP > TCP(6) 1024-65535 > 0.0.0.0/0
- *> All Traffic > All > All > 0.0.0.0/0
+- 100> HTTP(80) > TCP(6) 80 > 0.0.0.0/0
+- 110> Custom TCP > TCP(6) 27017 > 10.0.1.0/24
+- 120>Custom TCP > TCP(6) 1024-65535 > 0.0.0.0/0
+ 
 5. In the subnet associations select the public subnet created earlier and select edit
 6. On the private nacl add the following inbound rules:
-100> HTTP(80) > TCP(6) 80 > 0.0.0.0/0 > Allow
-110> Custom TCP > TCP(6) 1024-65535 > 0.0.0.0/0 > Allow
-120> SSH(22) > TCP(6) 22 > 10.99.3.0/24 > Allow
- *> All Traffic > All > All > 0.0.0.0/0 > deny
+- 100> HTTP(80) > TCP(6) 80 > 0.0.0.0/0 > Allow
+- 110> Custom TCP > TCP(6) 1024-65535 > 0.0.0.0/0 > Allow
+- 120> SSH(22) > TCP(6) 22 > 10.99.3.0/24 > Allow
+
 7. On the private nacl add the following outbound rules:
-100> HTTP(80) > TCP(6) 80 > 0.0.0.0/0
-110> Custom TCP > TCP(6) 1024-65535 > 10.99.1.0/24
-120>Custom TCP > TCP(6) 1024-65535 > 10.99.3.0/24
- *> All Traffic > All > All > 0.0.0.0/0
+- 100> HTTP(80) > TCP(6) 80 > 0.0.0.0/0
+- 110> Custom TCP > TCP(6) 1024-65535 > 10.99.1.0/24
+- 120>Custom TCP > TCP(6) 1024-65535 > 10.99.3.0/24
+ 
 ## Step 6 - Create a security group now or create it at when we launch our app
 - Create a security group for the app:
   - Inbound rules:

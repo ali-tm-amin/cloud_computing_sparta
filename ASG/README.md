@@ -70,5 +70,8 @@ The Choose instance launch options page appears, giving you options for launchin
 - Keep the rest of the defaults for this tutorial and choose Skip to review.
 
 - On the Review page, review the information for the group, and then choose Create Auto Scaling group.
-https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html#gs-create-lt
 
+
+### For ASG setup instructions follow the link:
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html#gs-create-lt
