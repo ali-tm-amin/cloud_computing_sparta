@@ -1,6 +1,6 @@
 # NAT instance
 
-![](/NAT-Instance-and-NAT-Gateway.jpeg)
+![](/images/NAT-Instance-and-NAT-Gateway.jpeg)
 
 * How can we have intenet in our private subnet and db instance to ping any website for and recieve a response
 * AWS Nat Gateway - easy - Elastic IP
@@ -12,11 +12,14 @@
 * Launch it in our VPC within public subnet
 * Enable public
 * Disable/stop resource request check
-![](/stop_nat_source_destination_check.png)
+![](/images/stop_nat_source_destination_check.png)
+
 * Edit route table to allow 0.0.0.0 for nat instance
-![](/rt_allow_nat_instance.png)
+![](/images/rt_allow_nat_instance.png)
+
 * Add some security rule in db security group
-![](/db_sg_rules.png)
+![](/images/db_sg_rules.png)
+
 * copy eng99.pem file from local host to Nat instance
 * SRP - Rsync - manually copy paste by creating a file with same name on nat instance
 
@@ -29,7 +32,7 @@
 * Once you establshed the connection to db instance, ping a website such as `ping www.bbc.co.uk`
 
 # Bastion Server Lab / Nat instance
-![](/AWS_Bastion.png)
+![](/images/AWS_Bastion.png)
 ## Summary
 
 Now that we've created a private subnet for our database instances we have a problem. We no longer have access to them via SSH.
@@ -39,11 +42,14 @@ To solve this we need to create a bastion server, also known as a jump box so th
 ## Tasks
 
 * Create a new public subnet called bastion
-![](/bastion_subnet.png)
+![](/images/bastion_subnet.png)
+
 * Create a new ubuntu instance called bastion in this subnet
-![](/Choose_AMI.png)
+![](/images/Choose_AMI.png)
+
 * Create a security group that only allows access on port 22 from your IP
-![](/bastion_access_sg_only_22_myip.png)
+![](/images/bastion_access_sg_only_22_myip.png)
+
 * Create a security group called bastion-access that only allows ssh access from the bastion group
 * SSH to your bastion server and from there SSH to your database instance
 * `ping www.bbc.com` and get a response back
@@ -59,7 +65,7 @@ The Bastion host can be started and stopped to enable or disable inbound SSH com
 
 
 * Launch it in our VPC within public subnet
-![](/owned_vpc_enabled_publicip.png)
+![](/images/owned_vpc_enabled_publicip.png)
 
 ## You can use the following sequence of activities to use the SSH Agent forwarding from a Linux machine.
 

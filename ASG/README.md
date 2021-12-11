@@ -26,7 +26,8 @@ Manual Monitoring Tools:
   * Create and edit alarms to be notified of problems
   * See at-a-glance overviews of your alarms and AWS resources
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring_automated_manual.html
-## Autoscaling and Load Balancing instructions:
+## Autoscaling and Load Balancing
+*instructions:*
 * Create Launch Template for auto scaling group(ASG)
 * Create Auto load balancer
 * ALB: Application Load Balancer
@@ -55,22 +56,24 @@ On the navigation pane, under INSTANCES, choose Launch Templates.
 
 ## Auto Scaling
 To create an Auto Scaling group:
-* 1- On the Choose launch template or configuration page, for Auto Scaling group name, enter my-first-asg
-* 2. Choose Next.
+  - On the Choose launch template or configuration page, for Auto Scaling group name, enter my-first-asg
+- Choose Next.
 The Choose instance launch options page appears, giving you options for launching On-Demand and Spot Instances (if you chose a launch template) and allowing you to choose the VPC network settings you want the Auto Scaling group to use.
-* 3. In the Network section, keep VPC set to the default VPC for your chosen AWS Region, or select your own VPC. The default VPC is automatically configured to provide internet connectivity to your instance. This VPC includes a public subnet in each Availability Zone in the Region.
-* 4. For Availability Zones and subnets, choose a subnet from each Availability Zone that you want to include. Use subnets in multiple Availability Zones for high availability.
+- In the Network section, keep VPC set to the default VPC for your chosen AWS Region, or select your own VPC. The default VPC is automatically configured to provide internet connectivity to your instance. This VPC includes a public subnet in each Availability Zone in the Region.
 
-  * 5. [Launch template only] In the Instance type requirements section, use the default setting (do not override the launch template) to simplify this step. For this tutorial, you will launch only one On-Demand Instance using the instance type specified in your launch template.
+- For Availability Zones and subnets, choose a subnet from each Availability Zone that you want to include. Use subnets in multiple Availability Zones for high availability.
 
-* 6. Keep the rest of the defaults for this tutorial and choose Skip to review.
-* 7. On the Review page, review the information for the group, and then choose Create Auto Scaling group.
+- [Launch template only] In the Instance type requirements section, use the default setting (do not override the launch template) to simplify this step. For this tutorial, you will launch only one On-Demand Instance using the instance type specified in your launch template.
+
+- Keep the rest of the defaults for this tutorial and choose Skip to review.
+
+- On the Review page, review the information for the group, and then choose Create Auto Scaling group.
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html#gs-create-lt
 
 ## S3 and AWS CLI
 * Simple Storage Service
 * shh into machine using AWS key
-* if you couldn't, go in security tab and select security group Ads port 22, new inbound rule
+* if you couldn't, go to security tab and select security group add port 22, as a new inbound rule
 * `sudo apt-get update -y`
 * `sudo apt-get upgrade -y`
 * `sudo apt update -y`
@@ -100,7 +103,7 @@ https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.htm
  https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
 Using credential for EC2 instance metadata https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
 
-< img scr="image/Autoscaling_LoadBalancing.png" width="80" >
+![](/images/Autoscaling_LoadBalancing.png)
 
 
 
