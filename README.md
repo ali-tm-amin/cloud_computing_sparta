@@ -1,3 +1,6 @@
+![AWS VPC Architecture](/images/AWS_VPC_Architecture.png)
+
+![](/images/2_tier_architecture.png)
 ## Amazon Web Services
 ### EC2
 * Create an EC2 instance -VM
@@ -10,18 +13,19 @@
 * Update and Upgrade `sudo apt-get update -y` `sudo apt-get upgrade -y`
 * Install NGINX `sudo apt-get install nginx -y`
   * Will be available publicly
-* npm start
+* `npm start`
 * Require a public ip for the EC2 Instance
-* transfer the app via securecp `scp` or rsync
+* transfer the app via securecp `scp` or `rsync`
 install dependencies
 
-### UsingSynce:
+### Using Rsync:
 `rsync -avzh -e "ssh -i eng99.pem" /Vagrant/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west` 
 compute.amazonaws.com:/home/ubuntu/app
 * scp -i pem_file file_to_copy user@ip:/destination
 example: `scp -i "~/.ssh/eng99.pem" restaurant.py ubuntu@e***.com:/home/ubuntu/new_folder/restaurant.py`
-# AWS cloud_computing_sparta
+# AWS cloud_computing
 ## What is cloud computing 
+
 Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user. Large clouds often have functions distributed over multiple locations, each location being a data center.
 
 ## What are the benefits?
@@ -38,25 +42,25 @@ Cloud computing is the on-demand availability of computer system resources, espe
 * E.g. Healthcare companies are using the cloud to develop more personalized treatments for patients. Financial services companies are using the cloud to power real time fraud detection and prevention. And video game makeers are using the cloud to deliver online games to millions of players around the world.
 - Here is a list of 10 companies that using cloud computing:
 
-**1. Pininterest.**
+1. **Pininterest.**
 
-**2. Evernote**
+2. **Evernote**
 
-**3. Instagram**
+3. **Instagram**
 
-**4. Dropbox**
+4. **Dropbox**
 
-**5. Zynga**
+5. **Zynga**
 
-**6. GE**
+6. **GE**
 
-**7. Target**
+7. **Target**
 
-**8. Walmart**
+8. **Walmart**
 
-**9. Netflix**
+9. **Netflix**
 
-**10. Apple**
+10. **Apple**
 
 * Sooner or later every organisaion start adapting could services.
 
@@ -113,9 +117,13 @@ The A2A pub/sub functionality provides topics for high-throughput, push-based, m
 There are several possibilities to achieve HA with EC2:
 
 - Create an autoscaling group with min capacity=1 and max capacity=1. So whenever your instance fails, the autoscaling group will create a new one. The autoscaling group comes for free, so this is not a bad solution depending on your SLA.
+
 - Use ec2 auto-recovery feature by creating a cloudwatch alarm that would replace your instance if failed.
+
 - Create two EC2 instances and use Route 53 DNS failover to resolve to an healthy instance
+
 - Last but not least: the best solution is definitely to create several instances across several availability zones and to use an elastic load balancer to distribute the traffic. This way, even if an instance fails, you already have other ones available. AWS recommends this solution as they have an SLA of 99.95% for their instance in an AZ. By putting in several AZs you can have 100% availability
+
 ## Making EC2 highly scalable with Auto Scaling:
 
 Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups. You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes above this size. If you specify the desired capacity, either when you create the group or at any time thereafter, Amazon EC2 Auto Scaling ensures that your group has this many instances. If you specify scaling policies, then Amazon EC2 Auto Scaling can launch or terminate instances as demand on your application increases or decreases.
@@ -134,14 +142,23 @@ Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Ama
 - Instance Details: Your VPC -> Public Subnet -> Assign public ip enabled
 - Security Group: app security group
 ### Create the db EC2 instance
+
 - AMI: Ubuntu
+
 - Instance type: t2 micro
+
 - Instance Details: Your VPC -> Private Subnet -> Assign public ip disabled
+
 - Security Group: db security group
+
 ### Create a nat instance
+
 - AMI: Ubuntu
+
 - Instance type: t2 micro
+
 - Instance Details: Your VPC -> nat Subnet -> Assign public ip enabled
+
 - Security Group: nat security group
 
 For more instructions follow this link
